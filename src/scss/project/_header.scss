@@ -80,16 +80,16 @@
                 margin: 0 auto;
 
                 @media(min-width: $breakpoint-small) {
-                    width: 180px;
+                    width: 130px;
                 }
 
                 @media(min-width: $breakpoint-large) {
-                    width: 230px;
+                    width: 130px;
                 }
             }
 
             path, polygon {
-                fill: w-color(dark);
+                /*fill: w-color(dark);*/
                 transition: all .2s ease-in-out;
             }
 
@@ -109,6 +109,8 @@
 
             a {
                 font-weight: bold;
+                text-transform: uppercase;
+                font-family: "Asap Condensed";
             }
 
             ul.sub-menu a {

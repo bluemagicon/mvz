@@ -11,11 +11,18 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-	<?php /*
-	<link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/source-sans-pro-v13-latin-regular.woff2" as="font" crossorigin="anonymous" />
-	<link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/source-sans-pro-v13-latin-600.woff2" as="font" crossorigin="anonymous" />
-	<link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/source-sans-pro-v13-latin-700.woff2" as="font" crossorigin="anonymous" />
-	*/ ?>
+    <link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-condensed-v8-latin-regular.woff2" as="font" crossorigin="anonymous" />
+	<link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-condensed-v8-latin-500.woff2" as="font" crossorigin="anonymous" />
+	<link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-condensed-v8-latin-600.woff2" as="font" crossorigin="anonymous" />
+	<link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-condensed-v8-latin-700.woff2" as="font" crossorigin="anonymous" />
+
+    <link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-v15-latin-regular.woff2" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-v15-latin-500.woff2" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-v15-latin-600.woff2" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="<?= get_bloginfo('template_url') ?>/dist/fonts/asap-v15-latin-700.woff2" as="font" crossorigin="anonymous" />
+
+
+
 
 	<?php wp_head(); ?>
 
@@ -65,19 +72,26 @@ $page_header	= $override_header ?: $global_header;
 	<header class="header header--sticky" id="header" role="banner">
 		<div class="header-inner">
 			<div class="header-container">
-				<div class="header-col">
+
+                <div class="header-col uk-width-2-5">
+                    <?php include 'tpl/partials/header-nav.php'; ?>
+                    <?php include 'tpl/partials/calltoaction.php'; ?>
+                    <?php include 'tpl/partials/header-contact.php'; ?>
+                    <?php include 'tpl/partials/header-lang.php'; ?>
+                    <?php include 'tpl/partials/header-nav-mobile.php'; ?>
+                </div>
+
+                <div class="header-col uk-width-1-5 uk-flex-center">
 				    <div class="header-item header-item--logo">
 						<?php include_once 'tpl/partials/logo-function.php'; ?>
 						<?php include 'tpl/partials/logo.php'; ?>
 					</div>
 				</div>
-				<div class="header-col">
-					<?php include 'tpl/partials/header-nav.php'; ?>
-					<?php include 'tpl/partials/calltoaction.php'; ?>
-					<?php include 'tpl/partials/header-contact.php'; ?>
-					<?php include 'tpl/partials/header-lang.php'; ?>
-					<?php include 'tpl/partials/header-nav-mobile.php'; ?>
-				</div>
+
+                <div class="header-col uk-width-2-5 uk-flex-right">
+                    Buttons
+                </div>
+
 			</div>
 		</div>
 	</header>

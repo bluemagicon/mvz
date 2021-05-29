@@ -1,0 +1,54 @@
+
+/*** GLOBAL ***/
+.w-body{
+  font-family: 'Asap';
+}
+:root{
+  --baw-button-border-radius: 3px;
+  --box-shadow-mvz: 0px 4px 20px rgba(20, 58, 137, 0.08);
+}
+
+
+  /*** HEADLINES ***/
+  .is-style-h1, .w-h1, h1{
+    font-size: 2.6em;
+    margin: 0.7rem 0;
+  }
+  .is-style-h6, .w-h6, h6{
+    letter-spacing: 0.08em;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+  /*** BUTTONS ***/
+  .ghostkit-button{
+    --gkt-button__padding-v: 0.5em;
+    --gkt-button__padding-h: 1.4em;
+
+    .ghostkit-button-text{
+      font-family: 'Asap Condensed';
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .ghostkit-button-icon{
+      font-size: 1.6rem;
+    }
+  }
+
+
+  /*** ICON-BOXES ***/
+.ghostkit-has-frame{
+  box-shadow: var(--box-shadow-mvz);
+}
+.ghostkit-icon-box{
+  padding: 3em;
+  .ghostkit-icon-box-icon-align-top{
+    justify-content: center;
+  }
+  .is-style-h5{
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
