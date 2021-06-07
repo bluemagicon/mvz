@@ -31,6 +31,7 @@ function baw_register_my_cpts() {
 		"rest_controller_class" => "WP_REST_Posts_Controller",
 		"has_archive" => true,
 		"show_in_menu" => true,
+		"show_in_rest" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
 		"exclude_from_search" => false,
@@ -41,7 +42,7 @@ function baw_register_my_cpts() {
 		"query_var" => true,
 		"menu_position" => 20,
 		"menu_icon" => "dashicons-groups",
-		"supports" => [ "title", "thumbnail", "revisions" ],
+		"supports" => [ "title", "thumbnail", "revisions", "editor" ],
 		"show_in_graphql" => false,
 	];
 
