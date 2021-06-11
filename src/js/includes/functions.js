@@ -48,6 +48,12 @@ jQuery(document).ready(function () {
         }, 1);
     }
 
+    //INFO SWITCHER
+    jQuery('.info-switch span').click(function(){
+        jQuery('.info-switch span').removeClass('active');
+        jQuery(this).addClass('active');
+    });
+
     // -----------------------------------------------
     // -----------------------------------------------
     // ANCHOR LINKS
@@ -91,3 +97,4 @@ function scrollTo(target)
         scrollTop: (distance-navHeight)
     }, 600);
 }
+

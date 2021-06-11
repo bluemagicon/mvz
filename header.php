@@ -89,6 +89,18 @@ $page_header	= $override_header ?: $global_header;
 				</div>
 
                 <div class="header-col uk-width-2-5 uk-flex-right">
+                    <div class="info-switch">
+                        <span class="active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="6.75" height="18" viewBox="0 0 6.75 18">
+                                <path id="FontAwsome_info_" data-name="FontAwsome (info)" d="M.7,14.914h.7V9.836H.7a.7.7,0,0,1-.7-.7V7.453a.7.7,0,0,1,.7-.7H4.641a.7.7,0,0,1,.7.7v7.461h.7a.7.7,0,0,1,.7.7V17.3a.7.7,0,0,1-.7.7H.7a.7.7,0,0,1-.7-.7V15.617A.7.7,0,0,1,.7,14.914ZM3.375,0A2.531,2.531,0,1,0,5.906,2.531,2.531,2.531,0,0,0,3.375,0Z" fill="#143a89"/>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <path id="FontAwsome_headset_" data-name="FontAwsome (headset)" d="M7.5,8.125a1.25,1.25,0,0,0-1.25-1.25H5.625a2.5,2.5,0,0,0-2.5,2.5V11.25a2.5,2.5,0,0,0,2.5,2.5H6.25A1.25,1.25,0,0,0,7.5,12.5Zm6.875,5.625a2.5,2.5,0,0,0,2.5-2.5V9.375a2.5,2.5,0,0,0-2.5-2.5H13.75a1.25,1.25,0,0,0-1.25,1.25V12.5a1.25,1.25,0,0,0,1.25,1.25ZM10,0A10.19,10.19,0,0,0,0,10v.625a.625.625,0,0,0,.625.625H1.25a.625.625,0,0,0,.625-.625V10a8.125,8.125,0,0,1,16.25,0h0c0,.095,0,6.473,0,6.473a1.652,1.652,0,0,1-1.652,1.652H12.5a1.875,1.875,0,0,0-1.875-1.875H9.375a1.875,1.875,0,1,0,0,3.75h7.1A3.527,3.527,0,0,0,20,16.473V10A10.19,10.19,0,0,0,10,0Z" fill="#143a89"/>
+                            </svg>
+                        </span>
+                    </div>
                     <a href="#" class="btn-plain-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18.75" height="20" viewBox="0 0 18.75 20">
                             <path id="FontAwsome_star-of-life_" data-name="FontAwsome (star-of-life)" d="M18.439,13.064,13.13,10l5.31-3.064a.625.625,0,0,0,.229-.854L17.417,3.917a.626.626,0,0,0-.854-.229l-5.31,3.064V.625A.625.625,0,0,0,10.628,0h-2.5A.625.625,0,0,0,7.5.625V6.752L2.191,3.689a.626.626,0,0,0-.854.229L.086,6.082a.625.625,0,0,0,.229.854L5.625,10,.315,13.064a.625.625,0,0,0-.229.854l1.251,2.165a.626.626,0,0,0,.854.229L7.5,13.248v6.127A.625.625,0,0,0,8.126,20h2.5a.625.625,0,0,0,.625-.625V13.248l5.31,3.064a.625.625,0,0,0,.854-.229l1.251-2.165a.624.624,0,0,0-.229-.854Z" transform="translate(-0.002)" fill="#ce0d28"/>
@@ -112,3 +124,28 @@ $page_header	= $override_header ?: $global_header;
 			</div>
 		</div>
 	</header>
+    <div class="header-bar">
+        <div class="allgemeine-infos">
+        <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
+            <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
+                <span class="header-bar-item open-popup">
+                    <?php echo get_sub_field('header_content'); ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                    </svg>
+                </span>
+            <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
+                <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
+                    <?php echo get_sub_field('header_content'); ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                    </svg>
+                </a>
+            <?php }else{ ?>
+                <span class="header-bar-item">
+                    <?php echo get_sub_field('header_content'); ?>
+                </span>
+            <?php } ?>
+        <?php endwhile; ?>
+        </div>
+    </div>
