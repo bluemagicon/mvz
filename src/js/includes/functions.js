@@ -52,6 +52,13 @@ jQuery(document).ready(function () {
     jQuery('.info-switch span').click(function(){
         jQuery('.info-switch span').removeClass('active');
         jQuery(this).addClass('active');
+        if(jQuery('.info-switch .allgemeine-infos-btn').hasClass('active')){
+            jQuery('.kontakt-infos').css("display", "none");
+            jQuery('.allgemeine-infos').css("display", "flex");
+        }else{
+            jQuery('.allgemeine-infos').css("display", "none");
+            jQuery('.kontakt-infos').css("display", "flex");
+        }
     });
 
     // -----------------------------------------------

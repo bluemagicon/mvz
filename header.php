@@ -90,12 +90,12 @@ $page_header	= $override_header ?: $global_header;
 
                 <div class="header-col uk-width-2-5 uk-flex-right">
                     <div class="info-switch">
-                        <span class="active">
+                        <span class="active allgemeine-infos-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="6.75" height="18" viewBox="0 0 6.75 18">
                                 <path id="FontAwsome_info_" data-name="FontAwsome (info)" d="M.7,14.914h.7V9.836H.7a.7.7,0,0,1-.7-.7V7.453a.7.7,0,0,1,.7-.7H4.641a.7.7,0,0,1,.7.7v7.461h.7a.7.7,0,0,1,.7.7V17.3a.7.7,0,0,1-.7.7H.7a.7.7,0,0,1-.7-.7V15.617A.7.7,0,0,1,.7,14.914ZM3.375,0A2.531,2.531,0,1,0,5.906,2.531,2.531,2.531,0,0,0,3.375,0Z" fill="#143a89"/>
                             </svg>
                         </span>
-                        <span>
+                        <span class="kontakt-infos-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                 <path id="FontAwsome_headset_" data-name="FontAwsome (headset)" d="M7.5,8.125a1.25,1.25,0,0,0-1.25-1.25H5.625a2.5,2.5,0,0,0-2.5,2.5V11.25a2.5,2.5,0,0,0,2.5,2.5H6.25A1.25,1.25,0,0,0,7.5,12.5Zm6.875,5.625a2.5,2.5,0,0,0,2.5-2.5V9.375a2.5,2.5,0,0,0-2.5-2.5H13.75a1.25,1.25,0,0,0-1.25,1.25V12.5a1.25,1.25,0,0,0,1.25,1.25ZM10,0A10.19,10.19,0,0,0,0,10v.625a.625.625,0,0,0,.625.625H1.25a.625.625,0,0,0,.625-.625V10a8.125,8.125,0,0,1,16.25,0h0c0,.095,0,6.473,0,6.473a1.652,1.652,0,0,1-1.652,1.652H12.5a1.875,1.875,0,0,0-1.875-1.875H9.375a1.875,1.875,0,1,0,0,3.75h7.1A3.527,3.527,0,0,0,20,16.473V10A10.19,10.19,0,0,0,10,0Z" fill="#143a89"/>
                             </svg>
@@ -123,29 +123,73 @@ $page_header	= $override_header ?: $global_header;
 
 			</div>
 		</div>
-	</header>
-    <div class="header-bar">
-        <div class="allgemeine-infos">
-        <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
-            <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
-                <span class="header-bar-item open-popup">
+        <div class="header-bar">
+            <div class="allgemeine-infos">
+                <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
+                    <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
+                        <span class="header-bar-item open-popup">
+                        <?php echo get_sub_field('popup-content'); ?>
+                            <?php echo get_sub_field('header_content'); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                        </svg>
+                    </span>
+                    <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
+                        <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
+                            <?php echo get_sub_field('header_content'); ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                            </svg>
+                        </a>
+                    <?php }else{ ?>
+                        <span class="header-bar-item">
+                        <?php echo get_sub_field('header_content'); ?>
+                    </span>
+                    <?php } ?>
+                <?php endwhile; ?>
+            </div>
+            <div class="kontakt-infos">
+                <?php while(have_rows('kontaktinformationen', 'option')) : the_row(); ?>
+                    <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
+                        <span class="header-bar-item open-popup">
+                        <?php echo get_sub_field('header_content'); ?>
+                            <?php if(get_sub_field('icon') == "Telefon"){ ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_phone-alt_" data-name="FontAwsome (phone-alt)" d="M15.544,11.313l-3.5-1.5a.75.75,0,0,0-.875.216l-1.55,1.894A11.583,11.583,0,0,1,4.081,6.385l1.894-1.55a.748.748,0,0,0,.216-.875L4.691.46A.755.755,0,0,0,3.831.025L.581.775A.75.75,0,0,0,0,1.506a14.5,14.5,0,0,0,14.5,14.5.75.75,0,0,0,.731-.581l.75-3.25a.759.759,0,0,0-.438-.863Z" transform="translate(0 -0.006)" fill="#143a89"/>
+                            </svg>
+                            <?php } else if(get_sub_field('icon') == "Mail"){ ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.667" height="14" viewBox="0 0 18.667 14">
+                                <path id="FontAwsome_envelope_" data-name="FontAwsome (envelope)" d="M16.917,64H1.75A1.75,1.75,0,0,0,0,65.75v10.5A1.75,1.75,0,0,0,1.75,78H16.917a1.75,1.75,0,0,0,1.75-1.75V65.75A1.75,1.75,0,0,0,16.917,64Zm0,1.75v1.488c-.817.666-2.121,1.7-4.907,3.882-.614.483-1.83,1.643-2.677,1.63-.846.014-2.063-1.147-2.677-1.63C3.871,68.939,2.568,67.9,1.75,67.238V65.75ZM1.75,76.25V69.483c.835.665,2.02,1.6,3.826,3.013.8.627,2.192,2.012,3.757,2,1.557.008,2.935-1.356,3.757-2,1.806-1.414,2.991-2.348,3.826-3.013V76.25Z" transform="translate(0 -64)" fill="#143a89"/>
+                            </svg>
+                            <?php }else{ ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_route_" data-name="FontAwsome (route)" d="M13,10H10a1,1,0,0,1,0-2h3s3-3.344,3-5a3,3,0,0,0-6,0,6.592,6.592,0,0,0,1.416,3H10a3,3,0,0,0,0,6h3a1,1,0,0,1,0,2H5.8a21.575,21.575,0,0,1-1.478,2H13a3,3,0,0,0,0-6Zm0-8a1,1,0,1,1-1,1A1,1,0,0,1,13,2ZM3,8a3,3,0,0,0-3,3c0,1.656,3,5,3,5s3-3.344,3-5A3,3,0,0,0,3,8Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,3,12Z" fill="#143a89"/>
+                            </svg>
+                            <?php } ?>
+                    </span>
+                    <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
+                        <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
+                            <?php echo get_sub_field('header_content'); ?>
+                            <?php if(get_sub_field('icon') == "telefon"){ ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <path id="FontAwsome_phone-alt_" data-name="FontAwsome (phone-alt)" d="M15.544,11.313l-3.5-1.5a.75.75,0,0,0-.875.216l-1.55,1.894A11.583,11.583,0,0,1,4.081,6.385l1.894-1.55a.748.748,0,0,0,.216-.875L4.691.46A.755.755,0,0,0,3.831.025L.581.775A.75.75,0,0,0,0,1.506a14.5,14.5,0,0,0,14.5,14.5.75.75,0,0,0,.731-.581l.75-3.25a.759.759,0,0,0-.438-.863Z" transform="translate(0 -0.006)" fill="#143a89"/>
+                                </svg>
+                            <?php } else if(get_sub_field('icon') == "mail"){ ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.667" height="14" viewBox="0 0 18.667 14">
+                                    <path id="FontAwsome_envelope_" data-name="FontAwsome (envelope)" d="M16.917,64H1.75A1.75,1.75,0,0,0,0,65.75v10.5A1.75,1.75,0,0,0,1.75,78H16.917a1.75,1.75,0,0,0,1.75-1.75V65.75A1.75,1.75,0,0,0,16.917,64Zm0,1.75v1.488c-.817.666-2.121,1.7-4.907,3.882-.614.483-1.83,1.643-2.677,1.63-.846.014-2.063-1.147-2.677-1.63C3.871,68.939,2.568,67.9,1.75,67.238V65.75ZM1.75,76.25V69.483c.835.665,2.02,1.6,3.826,3.013.8.627,2.192,2.012,3.757,2,1.557.008,2.935-1.356,3.757-2,1.806-1.414,2.991-2.348,3.826-3.013V76.25Z" transform="translate(0 -64)" fill="#143a89"/>
+                                </svg>
+                            <?php }else{ ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <path id="FontAwsome_route_" data-name="FontAwsome (route)" d="M13,10H10a1,1,0,0,1,0-2h3s3-3.344,3-5a3,3,0,0,0-6,0,6.592,6.592,0,0,0,1.416,3H10a3,3,0,0,0,0,6h3a1,1,0,0,1,0,2H5.8a21.575,21.575,0,0,1-1.478,2H13a3,3,0,0,0,0-6Zm0-8a1,1,0,1,1-1,1A1,1,0,0,1,13,2ZM3,8a3,3,0,0,0-3,3c0,1.656,3,5,3,5s3-3.344,3-5A3,3,0,0,0,3,8Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,3,12Z" fill="#143a89"/>
+                                </svg>
+                            <?php } ?>
+                        </a>
+                    <?php }else{ ?>
+                        <span class="header-bar-item">
                     <?php echo get_sub_field('header_content'); ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                        <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
-                    </svg>
                 </span>
-            <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
-                <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
-                    <?php echo get_sub_field('header_content'); ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                        <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
-                    </svg>
-                </a>
-            <?php }else{ ?>
-                <span class="header-bar-item">
-                    <?php echo get_sub_field('header_content'); ?>
-                </span>
-            <?php } ?>
-        <?php endwhile; ?>
+                    <?php } ?>
+                <?php endwhile; ?>
+            </div>
         </div>
-    </div>
+	</header>

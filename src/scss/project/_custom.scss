@@ -113,10 +113,15 @@
 .header-bar{
   box-shadow: 0px 4px 20px rgba(20, 58, 137, 0.08);
   background: #ffffff;
+  z-index: 0;
+  .kontakt-infos{
+    display: none;
+  }
   div{
     display: flex;
     .header-bar-item{
       flex-grow: 1;
+      width: 25%;
       padding: 20px 2.5%;
       border-right: 1px solid $w-color-light;
       display: flex;
