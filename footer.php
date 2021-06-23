@@ -70,19 +70,43 @@ $page_support	= $override_support ?: $global_support;
                         Jetzt anrufen
                     </a>
                 </div>
-                <div class="button-wrapper">
-                    <span class="ghostkit-button ghostkit-button-md ghostkit-custom-Z1aV2wz">
-                        <span class="ghostkit-button-icon ghostkit-button-icon-left">
-                            <svg class="ghostkit-svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.21967 6.2197C9.51256 5.9268 9.98744 5.9268 10.2803 6.2197L15.5303 11.4697C15.8232 11.7626 15.8232 12.2374 15.5303 12.5303L10.2803 17.7803C9.98744 18.0732 9.51256 18.0732 9.21967 17.7803C8.92678 17.4874 8.92678 17.0126 9.21967 16.7197L13.9393 12L9.21967 7.2803C8.92678 6.9874 8.92678 6.5126 9.21967 6.2197Z" fill="currentColor"></path>
-                            </svg>
-                        </span>
-                        <span class="ghostkit-button-text">E-MAIL SCHREIBEN</span>
-                    </span>
-                </div>
+                <a href="mailto:info@mvzbremen-mitte.de" class="btn-e-mail">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8.496" height="14" viewBox="0 0 8.496 14">
+                        <path id="FontAwsome_chevron-right_" data-name="FontAwsome (chevron-right)" d="M35.765,45.2l-6.231,6.231a.769.769,0,0,1-1.088,0l-.727-.727a.769.769,0,0,1,0-1.087l4.938-4.961L27.719,39.7a.769.769,0,0,1,0-1.087l.727-.727a.769.769,0,0,1,1.088,0l6.231,6.231A.769.769,0,0,1,35.765,45.2Z" transform="translate(-27.494 -37.657)" fill="#fff"/>
+                    </svg>
+                    E-Mail schreiben
+                </a>
             </div>
         </div>
         <div class="footer-col">
-            CONNECTOR
+            <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
+                <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
+                    <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('popup_content'); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
+                        <?php echo get_sub_field('header_content'); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                        </svg>
+                    </a>
+                <?php }elseif(get_sub_field('anzeige') == "Custom PopUp"){ ?>
+                    <span class="header-bar-item open-custom-popup">
+                            <?php echo get_sub_field('header_content'); ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                            </svg>
+                        </span>
+                <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
+                    <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
+                        <?php echo get_sub_field('header_content'); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                        </svg>
+                    </a>
+                <?php }else{ ?>
+                    <span class="header-bar-item">
+                        <?php echo get_sub_field('header_content'); ?>
+                    </span>
+                <?php } ?>
+            <?php endwhile; ?>
         </div>
         <div class="footer-col">
             <?php include_once 'tpl/partials/logo-function.php'; ?>

@@ -127,13 +127,19 @@ $page_header	= $override_header ?: $global_header;
             <div class="allgemeine-infos">
                 <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
                     <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
-                        <span class="header-bar-item open-popup">
-                        <?php echo get_sub_field('popup-content'); ?>
+                        <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('popup_content'); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
                             <?php echo get_sub_field('header_content'); ?>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
-                        </svg>
-                    </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                            </svg>
+                        </a>
+                    <?php }elseif(get_sub_field('anzeige') == "Custom PopUp"){ ?>
+                        <span class="header-bar-item open-custom-popup">
+                            <?php echo get_sub_field('header_content'); ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                            </svg>
+                        </span>
                     <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
                         <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
                             <?php echo get_sub_field('header_content'); ?>
@@ -151,7 +157,7 @@ $page_header	= $override_header ?: $global_header;
             <div class="kontakt-infos">
                 <?php while(have_rows('kontaktinformationen', 'option')) : the_row(); ?>
                     <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
-                        <span class="header-bar-item open-popup">
+                        <a data-custom-open="dyn-modal" data-content="test" data-title="<?= get_the_title() ?>" data-subtitle="test" class="header-bar-item">
                         <?php echo get_sub_field('header_content'); ?>
                             <?php if(get_sub_field('icon') == "Telefon"){ ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -166,7 +172,7 @@ $page_header	= $override_header ?: $global_header;
                                 <path id="FontAwsome_route_" data-name="FontAwsome (route)" d="M13,10H10a1,1,0,0,1,0-2h3s3-3.344,3-5a3,3,0,0,0-6,0,6.592,6.592,0,0,0,1.416,3H10a3,3,0,0,0,0,6h3a1,1,0,0,1,0,2H5.8a21.575,21.575,0,0,1-1.478,2H13a3,3,0,0,0,0-6Zm0-8a1,1,0,1,1-1,1A1,1,0,0,1,13,2ZM3,8a3,3,0,0,0-3,3c0,1.656,3,5,3,5s3-3.344,3-5A3,3,0,0,0,3,8Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,3,12Z" fill="#143a89"/>
                             </svg>
                             <?php } ?>
-                    </span>
+                        </a>
                     <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
                         <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
                             <?php echo get_sub_field('header_content'); ?>
@@ -193,3 +199,84 @@ $page_header	= $override_header ?: $global_header;
             </div>
         </div>
 	</header>
+
+
+<div class="custom-popup">
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <path id="FontAwsome_times_" data-name="FontAwsome (times)" d="M9.654,87l3.98-3.98a1.251,1.251,0,0,0,0-1.769l-.885-.885a1.251,1.251,0,0,0-1.769,0L7,84.346l-3.98-3.98a1.251,1.251,0,0,0-1.769,0l-.885.885a1.251,1.251,0,0,0,0,1.769L4.346,87,.366,90.98a1.251,1.251,0,0,0,0,1.769l.885.885a1.251,1.251,0,0,0,1.769,0L7,89.654l3.98,3.98a1.251,1.251,0,0,0,1.769,0l.885-.885a1.251,1.251,0,0,0,0-1.769Z" transform="translate(0 -80)" fill="#fff"/>
+                </svg>
+            </div>
+            <?php echo get_field('inhalt', 'option'); ?>
+            <?php while(have_rows('bereiche', 'option')) : the_row(); ?>
+                <div class="bereich">
+                    <h5><?php echo get_sub_field('uberschrift'); ?></h5>
+                    <?php
+                    $table = get_sub_field( 'offnungszeiten' );
+
+                    if ( ! empty ( $table ) ) {
+                        echo '<table border="0" cellpadding="0" cellspacing="0" class="oeffnungszeiten-table">';
+                        if ( ! empty( $table['caption'] ) ) {
+                            echo '<caption>' . $table['caption'] . '</caption>';
+                        }
+                        if ( ! empty( $table['header'] ) ) {
+                            echo '<thead>';
+                                echo '<tr>';
+                                foreach ($table['header'] as $th) {
+                                    echo '<th>';
+                                    echo $th['c'];
+                                    echo '</th>';
+                                }
+                                echo '</tr>';
+                            echo '</thead>';
+                        }
+                        echo '<tbody>';
+                        foreach ( $table['body'] as $tr ) {
+                            echo '<tr>';
+                            foreach ( $tr as $td ) {
+                                echo '<td>';
+                                echo $td['c'];
+                                echo '</td>';
+                            }
+                            echo '</tr>';
+                        }
+                        echo '</tbody>';
+                        echo '</table>';
+                    }
+                    ?>
+                </div>
+            <?php endwhile; ?>
+        </div>
+        <div class="popup-sidebar">
+            <a href="#" class="btn-calendar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15.75" height="18" viewBox="0 0 15.75 18">
+                    <path id="FontAwsome_calendar-alt_" data-name="FontAwsome (calendar-alt)" d="M0,16.313A1.688,1.688,0,0,0,1.688,18H14.062a1.688,1.688,0,0,0,1.688-1.687V6.75H0ZM11.25,9.422A.423.423,0,0,1,11.672,9h1.406a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H11.672a.423.423,0,0,1-.422-.422Zm0,4.5a.423.423,0,0,1,.422-.422h1.406a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H11.672a.423.423,0,0,1-.422-.422Zm-4.5-4.5A.423.423,0,0,1,7.172,9H8.578A.423.423,0,0,1,9,9.422v1.406a.423.423,0,0,1-.422.422H7.172a.423.423,0,0,1-.422-.422Zm0,4.5a.423.423,0,0,1,.422-.422H8.578A.423.423,0,0,1,9,13.922v1.406a.423.423,0,0,1-.422.422H7.172a.423.423,0,0,1-.422-.422Zm-4.5-4.5A.423.423,0,0,1,2.672,9H4.078a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H2.672a.423.423,0,0,1-.422-.422Zm0,4.5a.423.423,0,0,1,.422-.422H4.078a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H2.672a.423.423,0,0,1-.422-.422ZM14.062,2.25H12.375V.563A.564.564,0,0,0,11.812,0H10.687a.564.564,0,0,0-.562.563V2.25h-4.5V.563A.564.564,0,0,0,5.062,0H3.938a.564.564,0,0,0-.562.563V2.25H1.688A1.688,1.688,0,0,0,0,3.938V5.625H15.75V3.938A1.688,1.688,0,0,0,14.062,2.25Z" fill="#fff"/>
+                </svg>
+                Termin buchen
+            </a>
+            <a href="mailto:info@mvzbremen-mitte.de" class="btn-e-mail">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8.496" height="14" viewBox="0 0 8.496 14">
+                    <path id="FontAwsome_chevron-right_" data-name="FontAwsome (chevron-right)" d="M35.765,45.2l-6.231,6.231a.769.769,0,0,1-1.088,0l-.727-.727a.769.769,0,0,1,0-1.087l4.938-4.961L27.719,39.7a.769.769,0,0,1,0-1.087l.727-.727a.769.769,0,0,1,1.088,0l6.231,6.231A.769.769,0,0,1,35.765,45.2Z" transform="translate(-27.494 -37.657)" fill="#fff"/>
+                </svg>
+                E-Mail schreiben
+            </a>
+            <?php echo get_field('sidebar', 'option'); ?>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal micromodal-slide" id="dyn-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="dyn-modal-title">
+            <header class="modal__header">
+                <p class="modal__title" id="dyn-modal-title"></p>
+                <button class="modal__close" aria-label="Close modal" data-micromodal-close=""></button>
+            </header>
+            <main class="modal__content" id="dyn-modal-content">
+            </main>
+        </div>
+    </div>
+</div>

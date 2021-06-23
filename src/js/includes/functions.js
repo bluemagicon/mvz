@@ -61,6 +61,44 @@ jQuery(document).ready(function () {
         }
     });
 
+    // CUSTOM POPUP
+    jQuery('.open-custom-popup').click(function(){
+        jQuery('.custom-popup').css('display', 'flex');
+    });
+    jQuery('.custom-popup .popup-close').click(function(){
+        jQuery('.custom-popup').css('display', 'none');
+    });
+
+    var today = new Date().getDay();
+    jQuery('.oeffnungszeiten-table tr:nth-child('+today+')').css('background', '#143A89');
+    jQuery('.oeffnungszeiten-table tr:nth-child('+today+')').css('color', '#fff');
+
+    // -----------------------------------------------
+    // -----------------------------------------------
+    // MODAL / LIGHTBOX
+
+    MicroModal.init({
+        openTrigger: 'data-custom-open',
+    });
+
+    jQuery('[data-custom-open="dyn-modal"]').click(function() {
+        var title = jQuery(this).data('title');
+        var content = decodeURIComponent(jQuery(this).data('content').replace(/\+/g, ' '));
+
+        jQuery('#dyn-modal-title').empty().append(title);
+        jQuery('#dyn-modal-content').empty().append(content);
+    });
+
+    jQuery('[data-custom-open="dyn-modal"]').click(function() {
+        var title = jQuery(this).data('title');
+        var subtitle = jQuery(this).data('subtitle');
+        var content = decodeURIComponent(jQuery(this).data('content').replace(/\+/g, ' '));
+
+        jQuery('#dyn-modal-title').empty().append(title);
+        jQuery('#dyn-modal-subtitle').empty().append(subtitle);
+        jQuery('#dyn-modal-content').empty().append(content);
+    });
+
     // -----------------------------------------------
     // -----------------------------------------------
     // ANCHOR LINKS
