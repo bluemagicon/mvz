@@ -7,9 +7,6 @@
   --baw-button-border-radius: 3px;
   --box-shadow-mvz: 0px 4px 20px rgba(20, 58, 137, 0.08);
 }
-strong{
-  font-weight: 500;
-}
 
 
   /*** HEADLINES ***/
@@ -39,8 +36,8 @@ strong{
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
       border-radius: 4px;
       margin-right: 10px;
       cursor: pointer;
@@ -59,7 +56,7 @@ strong{
           transform: rotate(45deg);
           position: absolute;
           bottom: -6px;
-          left: 22px;
+          left: 17px;
         }
         svg path{
           fill: #ffffff;
@@ -68,17 +65,23 @@ strong{
     }
   }
   .btn-plain-icon{
+    font-family: 'Asap Condensed';
+    text-transform: uppercase;
+    font-size: 0.9em;
     display: flex;
     align-items: center;
     margin-right: 25px;
     svg{
       margin-right: 10px;
-      width: 20px;
+      width: 18px;
       flex-shrink: 0;
     }
   }
   .btn-calendar,
   .btn-e-mail{
+    font-family: 'Asap Condensed';
+    text-transform: uppercase;
+    font-size: 0.9em;
     background: $w-color-primary;
     padding: 12px 20px;
     border-radius: 4px;
@@ -125,6 +128,9 @@ strong{
 }
 
 /*** HEADER ***/
+.header-item--logo img, .header-item--logo svg{
+  width: 115px;
+}
 .header-bar-item{
   flex-grow: 1;
   width: 100%;
@@ -195,6 +201,21 @@ strong{
   display: none;
   align-items: center;
   justify-content: center;
+  &.as-page{
+    position: unset;
+    height: inherit;
+    width: inherit;
+    display: flex !important;
+    background: none;
+    .popup{
+      padding: 0;
+      .popup-content{
+        .popup-close{
+          display: none !important;
+        }
+      }
+    }
+  }
   .popup{
     background: #fff;
     position: relative;
@@ -233,7 +254,7 @@ strong{
             td{
               padding: 2px 0;
               &:first-child{
-                font-weight: 500;
+                font-weight: 600;
                 width: 130px;
                 padding-left: 10px;
               }
@@ -278,8 +299,10 @@ strong{
       .menu{
         list-style: none;
         a {
-          font-size: 1.44em;
+          font-size: 1.3em;
           font-weight: 600;
+          text-transform: uppercase;
+          font-family: 'Asap Condensed';
         }
         .sub-menu{
           display: none;
@@ -322,6 +345,9 @@ strong{
   }
 }
 .button-plain{
+  font-family: 'Asap Condensed';
+  font-size: 0.9em;
+  text-transform: uppercase;
   color: $w-color-medium !important;
   font-weight: 600;
   display: inline-flex;
@@ -352,6 +378,11 @@ strong{
   .ghostkit-accordion-item-heading{
     color: $w-color-medium;
     border-radius: 4px;
+    .ghostkit-accordion-item-label{
+      text-transform: uppercase;
+      font-size: 0.9em;
+      font-family: 'Asap Condensed';
+    }
   }
   &.ghostkit-accordion-item-active{
     .ghostkit-accordion-item-heading{
@@ -370,5 +401,34 @@ strong{
     .ghostkit-accordion-item-content{
       background: #fff;
     }
+  }
+}
+.type-team{
+  h6{
+    svg{
+      display: none;
+    }
+  }
+}
+.ghostkit-custom-ZRriXg{
+  .ghostkit-col-content{
+    height: 100%;
+    .ghostkit-icon-box{
+      margin: 0;
+      height: 100%;
+      transition: all .3s;
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+.swiper-pagination-bullet{
+  background: transparent !important;
+  border: 2px solid $w-color-medium;
+  height: 15px !important;
+  width: 15px !important;
+  &.swiper-pagination-bullet-active{
+    background: $w-color-medium !important;
   }
 }

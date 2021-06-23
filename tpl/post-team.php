@@ -39,10 +39,10 @@ $hide_links = true;
                         )
 
                         ?>
-                        <ul class="post-datalist"> <?php
+                        <?php
                             foreach($team_fields as $key => $field) {
                                 if($team_data[$key]) {
-                                    echo '<li data-field="'.$key.'">';
+                                    echo '<h6 data-field="'.$key.'">';
                                     if(isset($field['is_url'])) {
                                         $url = isset($field['url_prefix']) ? $field['url_prefix'] : '';
                                         $url .= isset($field['url']) ? $field['url'] : $team_data[$key];
@@ -53,10 +53,10 @@ $hide_links = true;
                                     if(isset($field['is_url'])) {
                                         echo '</a>';
                                     }
-                                    echo '</li>';
+                                    echo '</h6>';
                                 }
                             }?>
-                        </ul>
+
 
                         <?php if($team_data['opt_socialmedia']) { ?>
                             <div class="post-socials">
