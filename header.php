@@ -123,82 +123,82 @@ $page_header	= $override_header ?: $global_header;
 
 			</div>
 		</div>
-        <div class="header-bar active">
-            <div class="allgemeine-infos active">
-                <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
-                    <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
-                        <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('popup_content'); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
-                            <?php echo get_sub_field('header_content'); ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
-                            </svg>
-                        </a>
-                    <?php }elseif(get_sub_field('anzeige') == "Custom PopUp"){ ?>
-                        <span class="header-bar-item open-custom-popup">
+	</header>
+    <div class="header-bar">
+        <div class="allgemeine-infos active">
+            <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
+                <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
+                    <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('popup_content'); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
+                        <?php echo get_sub_field('header_content'); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                        </svg>
+                    </a>
+                <?php }elseif(get_sub_field('anzeige') == "Custom PopUp"){ ?>
+                    <span class="header-bar-item open-custom-popup">
                             <?php echo get_sub_field('header_content'); ?>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                 <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
                             </svg>
                         </span>
-                    <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
-                        <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
-                            <?php echo get_sub_field('header_content'); ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
-                            </svg>
-                        </a>
-                    <?php }else{ ?>
-                        <span class="header-bar-item">
+                <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
+                    <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
+                        <?php echo get_sub_field('header_content'); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                        </svg>
+                    </a>
+                <?php }else{ ?>
+                    <span class="header-bar-item">
                         <?php echo get_sub_field('header_content'); ?>
                     </span>
-                    <?php } ?>
-                <?php endwhile; ?>
-            </div>
-            <div class="kontakt-infos">
-                <?php while(have_rows('kontaktinformationen', 'option')) : the_row(); ?>
-                    <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
-                        <a data-custom-open="dyn-modal" data-content="test" data-title="<?= get_the_title() ?>" data-subtitle="test" class="header-bar-item">
+                <?php } ?>
+            <?php endwhile; ?>
+        </div>
+        <div class="kontakt-infos">
+            <?php while(have_rows('kontaktinformationen', 'option')) : the_row(); ?>
+                <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
+                    <a data-custom-open="dyn-modal" data-content="test" data-title="<?= get_the_title() ?>" data-subtitle="test" class="header-bar-item">
                         <?php echo get_sub_field('header_content'); ?>
-                            <?php if(get_sub_field('icon') == "Telefon"){ ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <?php if(get_sub_field('icon') == "Telefon"){ ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                 <path id="FontAwsome_phone-alt_" data-name="FontAwsome (phone-alt)" d="M15.544,11.313l-3.5-1.5a.75.75,0,0,0-.875.216l-1.55,1.894A11.583,11.583,0,0,1,4.081,6.385l1.894-1.55a.748.748,0,0,0,.216-.875L4.691.46A.755.755,0,0,0,3.831.025L.581.775A.75.75,0,0,0,0,1.506a14.5,14.5,0,0,0,14.5,14.5.75.75,0,0,0,.731-.581l.75-3.25a.759.759,0,0,0-.438-.863Z" transform="translate(0 -0.006)" fill="#143a89"/>
                             </svg>
-                            <?php } else if(get_sub_field('icon') == "Mail"){ ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18.667" height="14" viewBox="0 0 18.667 14">
+                        <?php } else if(get_sub_field('icon') == "Mail"){ ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.667" height="14" viewBox="0 0 18.667 14">
                                 <path id="FontAwsome_envelope_" data-name="FontAwsome (envelope)" d="M16.917,64H1.75A1.75,1.75,0,0,0,0,65.75v10.5A1.75,1.75,0,0,0,1.75,78H16.917a1.75,1.75,0,0,0,1.75-1.75V65.75A1.75,1.75,0,0,0,16.917,64Zm0,1.75v1.488c-.817.666-2.121,1.7-4.907,3.882-.614.483-1.83,1.643-2.677,1.63-.846.014-2.063-1.147-2.677-1.63C3.871,68.939,2.568,67.9,1.75,67.238V65.75ZM1.75,76.25V69.483c.835.665,2.02,1.6,3.826,3.013.8.627,2.192,2.012,3.757,2,1.557.008,2.935-1.356,3.757-2,1.806-1.414,2.991-2.348,3.826-3.013V76.25Z" transform="translate(0 -64)" fill="#143a89"/>
                             </svg>
-                            <?php }else{ ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <?php }else{ ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                 <path id="FontAwsome_route_" data-name="FontAwsome (route)" d="M13,10H10a1,1,0,0,1,0-2h3s3-3.344,3-5a3,3,0,0,0-6,0,6.592,6.592,0,0,0,1.416,3H10a3,3,0,0,0,0,6h3a1,1,0,0,1,0,2H5.8a21.575,21.575,0,0,1-1.478,2H13a3,3,0,0,0,0-6Zm0-8a1,1,0,1,1-1,1A1,1,0,0,1,13,2ZM3,8a3,3,0,0,0-3,3c0,1.656,3,5,3,5s3-3.344,3-5A3,3,0,0,0,3,8Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,3,12Z" fill="#143a89"/>
                             </svg>
-                            <?php } ?>
-                        </a>
-                    <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
-                        <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
-                            <?php echo get_sub_field('header_content'); ?>
-                            <?php if(get_sub_field('icon') == "telefon"){ ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                                    <path id="FontAwsome_phone-alt_" data-name="FontAwsome (phone-alt)" d="M15.544,11.313l-3.5-1.5a.75.75,0,0,0-.875.216l-1.55,1.894A11.583,11.583,0,0,1,4.081,6.385l1.894-1.55a.748.748,0,0,0,.216-.875L4.691.46A.755.755,0,0,0,3.831.025L.581.775A.75.75,0,0,0,0,1.506a14.5,14.5,0,0,0,14.5,14.5.75.75,0,0,0,.731-.581l.75-3.25a.759.759,0,0,0-.438-.863Z" transform="translate(0 -0.006)" fill="#143a89"/>
-                                </svg>
-                            <?php } else if(get_sub_field('icon') == "mail"){ ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18.667" height="14" viewBox="0 0 18.667 14">
-                                    <path id="FontAwsome_envelope_" data-name="FontAwsome (envelope)" d="M16.917,64H1.75A1.75,1.75,0,0,0,0,65.75v10.5A1.75,1.75,0,0,0,1.75,78H16.917a1.75,1.75,0,0,0,1.75-1.75V65.75A1.75,1.75,0,0,0,16.917,64Zm0,1.75v1.488c-.817.666-2.121,1.7-4.907,3.882-.614.483-1.83,1.643-2.677,1.63-.846.014-2.063-1.147-2.677-1.63C3.871,68.939,2.568,67.9,1.75,67.238V65.75ZM1.75,76.25V69.483c.835.665,2.02,1.6,3.826,3.013.8.627,2.192,2.012,3.757,2,1.557.008,2.935-1.356,3.757-2,1.806-1.414,2.991-2.348,3.826-3.013V76.25Z" transform="translate(0 -64)" fill="#143a89"/>
-                                </svg>
-                            <?php }else{ ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                                    <path id="FontAwsome_route_" data-name="FontAwsome (route)" d="M13,10H10a1,1,0,0,1,0-2h3s3-3.344,3-5a3,3,0,0,0-6,0,6.592,6.592,0,0,0,1.416,3H10a3,3,0,0,0,0,6h3a1,1,0,0,1,0,2H5.8a21.575,21.575,0,0,1-1.478,2H13a3,3,0,0,0,0-6Zm0-8a1,1,0,1,1-1,1A1,1,0,0,1,13,2ZM3,8a3,3,0,0,0-3,3c0,1.656,3,5,3,5s3-3.344,3-5A3,3,0,0,0,3,8Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,3,12Z" fill="#143a89"/>
-                                </svg>
-                            <?php } ?>
-                        </a>
-                    <?php }else{ ?>
-                        <span class="header-bar-item">
+                        <?php } ?>
+                    </a>
+                <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
+                    <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
+                        <?php echo get_sub_field('header_content'); ?>
+                        <?php if(get_sub_field('icon') == "telefon"){ ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_phone-alt_" data-name="FontAwsome (phone-alt)" d="M15.544,11.313l-3.5-1.5a.75.75,0,0,0-.875.216l-1.55,1.894A11.583,11.583,0,0,1,4.081,6.385l1.894-1.55a.748.748,0,0,0,.216-.875L4.691.46A.755.755,0,0,0,3.831.025L.581.775A.75.75,0,0,0,0,1.506a14.5,14.5,0,0,0,14.5,14.5.75.75,0,0,0,.731-.581l.75-3.25a.759.759,0,0,0-.438-.863Z" transform="translate(0 -0.006)" fill="#143a89"/>
+                            </svg>
+                        <?php } else if(get_sub_field('icon') == "mail"){ ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.667" height="14" viewBox="0 0 18.667 14">
+                                <path id="FontAwsome_envelope_" data-name="FontAwsome (envelope)" d="M16.917,64H1.75A1.75,1.75,0,0,0,0,65.75v10.5A1.75,1.75,0,0,0,1.75,78H16.917a1.75,1.75,0,0,0,1.75-1.75V65.75A1.75,1.75,0,0,0,16.917,64Zm0,1.75v1.488c-.817.666-2.121,1.7-4.907,3.882-.614.483-1.83,1.643-2.677,1.63-.846.014-2.063-1.147-2.677-1.63C3.871,68.939,2.568,67.9,1.75,67.238V65.75ZM1.75,76.25V69.483c.835.665,2.02,1.6,3.826,3.013.8.627,2.192,2.012,3.757,2,1.557.008,2.935-1.356,3.757-2,1.806-1.414,2.991-2.348,3.826-3.013V76.25Z" transform="translate(0 -64)" fill="#143a89"/>
+                            </svg>
+                        <?php }else{ ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="FontAwsome_route_" data-name="FontAwsome (route)" d="M13,10H10a1,1,0,0,1,0-2h3s3-3.344,3-5a3,3,0,0,0-6,0,6.592,6.592,0,0,0,1.416,3H10a3,3,0,0,0,0,6h3a1,1,0,0,1,0,2H5.8a21.575,21.575,0,0,1-1.478,2H13a3,3,0,0,0,0-6Zm0-8a1,1,0,1,1-1,1A1,1,0,0,1,13,2ZM3,8a3,3,0,0,0-3,3c0,1.656,3,5,3,5s3-3.344,3-5A3,3,0,0,0,3,8Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,3,12Z" fill="#143a89"/>
+                            </svg>
+                        <?php } ?>
+                    </a>
+                <?php }else{ ?>
+                    <span class="header-bar-item">
                     <?php echo get_sub_field('header_content'); ?>
                 </span>
-                    <?php } ?>
-                <?php endwhile; ?>
-            </div>
+                <?php } ?>
+            <?php endwhile; ?>
         </div>
-	</header>
+    </div>
 
 
 <div class="custom-popup">

@@ -2,10 +2,12 @@
 // -----------------------------------------------
 // Header onScroll
 
-window.onscroll = function() {myFunction(), hideHeaderBar()};
+window.onscroll = function() {myFunction()};
 
 var header = document.getElementById("header");
 var sticky = header.offsetTop;
+
+var offset = 96;
 
 function myFunction() {
   if (window.pageYOffset > sticky) {
@@ -13,20 +15,12 @@ function myFunction() {
   } else {
     header.classList.remove("header--scrolled");
   }
-}
 
-
-var prevScrollpos = window.pageYOffset;
-
-function hideHeaderBar(){
-    var currentScrollPos = window.pageYOffset;
-    if (currentScrollPos > prevScrollpos) {
-        jQuery('.header-bar').removeClass('active');
-        jQuery('.info-switch span').removeClass('active');
-    }else{
-        /*jQuery('.header-bar').removeClass('active');*/
-    }
-    prevScrollpos = currentScrollPos;
+  if(window.pageYOffset > offset){
+      jQuery('.info-switch span').addClass('scrolled');
+  }else{
+      jQuery('.info-switch span').removeClass('scrolled');
+  }
 }
 
 
@@ -66,7 +60,9 @@ jQuery(document).ready(function () {
     jQuery('.info-switch span').click(function(){
         jQuery('.info-switch span').removeClass('active');
         jQuery(this).addClass('active');
-        jQuery('.header-bar').addClass('active');
+        if(jQuery('.info-switch span').hasClass('scrolled')){
+            scrollTo('body');
+        }
         if(jQuery('.info-switch .allgemeine-infos-btn').hasClass('active')){
             jQuery('.kontakt-infos').removeClass('active');
             jQuery('.allgemeine-infos').addClass('active');

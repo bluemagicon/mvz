@@ -62,6 +62,15 @@
           fill: #ffffff;
         }
       }
+      &.scrolled{
+        background: none;
+        &::after{
+          display: none;
+        }
+        svg path{
+          fill: rgb(20, 58, 137);
+        }
+      }
     }
   }
   .btn-plain-icon{
@@ -98,6 +107,9 @@
     background: $w-color-medium;
   }
   .ghostkit-button{
+    display: inline-flex;
+    align-items: center;
+    width: inherit;
     .ghostkit-button-icon{
       font-size: 1.6rem;
     }
@@ -155,10 +167,6 @@
   box-shadow: 0px 4px 20px rgba(20, 58, 137, 0.08);
   background: #ffffff;
   z-index: 0;
-  display: none;
-  &.active{
-    display: block;
-  }
   > div {
     display: none;
     &.active{
@@ -171,6 +179,9 @@
       padding: 20px 2.5%;
       box-shadow: none;
       margin-bottom: 0;
+      p{
+        font-size: 0.9em;
+      }
     }
   }
 }
@@ -426,5 +437,168 @@
   width: 15px !important;
   &.swiper-pagination-bullet-active{
     background: $w-color-medium !important;
+  }
+}
+@media(max-width: 1200px){
+  #header{
+    .header-inner{
+      .header-container{
+        flex-wrap: wrap;
+        .header-col{
+          width: 100%;
+          justify-content: center;
+          &:nth-child(1){
+            order: 2;
+            margin-bottom: 25px;
+          }
+          &:nth-child(2){
+            order: 1;
+            margin-bottom: 15px;
+          }
+          &:nth-child(3){
+            order: 3
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    .footer-inner {
+      .footer-col {
+        width: 33%;
+
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 992px){
+  #header{
+    .header-inner{
+      .header-container{
+        .header-col{
+          margin-bottom: 30px !important;
+          &:nth-child(1){
+            width: 50%;
+            justify-content: flex-end;
+          }
+          &:nth-child(2){
+            width: 50%;
+            justify-content: flex-start;
+          }
+          &:last-child{
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+  }
+  .header-bar{
+    >div{
+      flex-wrap: wrap;
+      .header-bar-item{
+        width: 50%;
+      }
+    }
+  }
+  .footer {
+    padding: 20px 0;
+    p{
+      margin: 15px 0;
+    }
+    .footer-inner {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .footer-col {
+        width: auto;
+        text-align: center;
+        .flex-wrapper{
+          justify-content: center;
+        }
+        ul{
+          padding: 0;
+        }
+        &:nth-child(1){
+          order: 2;
+        }
+        &:nth-child(2){
+          order: 3;
+        }
+        &:nth-child(4){
+          order: 1;
+        }
+      }
+      .meta-menu{
+        order: 4;
+      }
+    }
+  }
+}
+@media(max-width: 576px){
+  #header{
+    .header-inner{
+      padding: 15px 0;
+      box-shadow: none;
+      .header-container{
+        flex-wrap: nowrap;
+        .header-col{
+          margin-bottom: 0 !important;
+          &:nth-child(1){
+            order: 3;
+            width: auto;
+            .header-item{
+              margin-left: 0;
+              .hamburger{
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #eef1f5;
+                border-radius: 4px;
+              }
+            }
+          }
+          &:nth-child(2){
+            order: 1;
+          }
+          &:nth-child(3){
+            order: 2;
+            flex-grow: 2;
+            justify-content: flex-end;
+            .info-switch span{
+              margin-right: 5px;
+            }
+          }
+          .btn-plain-icon{
+            display: none;
+          }
+          .btn-calendar{
+            display: none;
+          }
+          .info-switch{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .header-bar{
+    width: calc(100% - 2rem);
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0px 4px 20px rgba(20, 58, 137, 0.08);
+    >div{
+      .header-bar-item{
+        width: 100%;
+        border-bottom: 1px solid $w-color-light;
+        &:last-child{
+          border-bottom: 0;
+        }
+      }
+    }
   }
 }
