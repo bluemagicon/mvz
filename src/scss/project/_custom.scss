@@ -98,14 +98,6 @@
     background: $w-color-medium;
   }
   .ghostkit-button{
-    --gkt-button__padding-v: 0.5em;
-    --gkt-button__padding-h: 1.4em;
-
-    .ghostkit-button-text{
-      font-family: 'Asap Condensed';
-      font-weight: 700;
-      text-transform: uppercase;
-    }
     .ghostkit-button-icon{
       font-size: 1.6rem;
     }
@@ -163,11 +155,15 @@
   box-shadow: 0px 4px 20px rgba(20, 58, 137, 0.08);
   background: #ffffff;
   z-index: 0;
-  .kontakt-infos{
-    display: none;
+  display: none;
+  &.active{
+    display: block;
   }
-  div {
-    display: flex;
+  > div {
+    display: none;
+    &.active{
+      display: flex;
+    }
     .header-bar-item{
       width: 25%;
       border-right: 1px solid $w-color-light;

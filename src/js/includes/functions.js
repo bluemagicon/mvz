@@ -2,7 +2,7 @@
 // -----------------------------------------------
 // Header onScroll
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {myFunction(), hideHeaderBar()};
 
 var header = document.getElementById("header");
 var sticky = header.offsetTop;
@@ -13,6 +13,19 @@ function myFunction() {
   } else {
     header.classList.remove("header--scrolled");
   }
+}
+
+
+var prevScrollpos = window.pageYOffset;
+
+function hideHeaderBar(){
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos > prevScrollpos) {
+        jQuery('.header-bar').removeClass('active');
+    }else{
+        /*jQuery('.header-bar').removeClass('active');*/
+    }
+    prevScrollpos = currentScrollPos;
 }
 
 
@@ -52,12 +65,13 @@ jQuery(document).ready(function () {
     jQuery('.info-switch span').click(function(){
         jQuery('.info-switch span').removeClass('active');
         jQuery(this).addClass('active');
+        jQuery('.header-bar').addClass('active');
         if(jQuery('.info-switch .allgemeine-infos-btn').hasClass('active')){
-            jQuery('.kontakt-infos').css("display", "none");
-            jQuery('.allgemeine-infos').css("display", "flex");
+            jQuery('.kontakt-infos').removeClass('active');
+            jQuery('.allgemeine-infos').addClass('active');
         }else{
-            jQuery('.allgemeine-infos').css("display", "none");
-            jQuery('.kontakt-infos').css("display", "flex");
+            jQuery('.allgemeine-infos').removeClass('active');
+            jQuery('.kontakt-infos').addClass('active');
         }
     });
 
@@ -130,8 +144,6 @@ jQuery(document).ready(function () {
     // -----------------------------------------------
 
 });
-
-
 
 function scrollTo(target)
 {

@@ -123,8 +123,8 @@ $page_header	= $override_header ?: $global_header;
 
 			</div>
 		</div>
-        <div class="header-bar">
-            <div class="allgemeine-infos">
+        <div class="header-bar active">
+            <div class="allgemeine-infos active">
                 <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
                     <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
                         <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('popup_content'); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
