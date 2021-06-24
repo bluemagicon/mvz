@@ -22,6 +22,7 @@ function hideHeaderBar(){
     var currentScrollPos = window.pageYOffset;
     if (currentScrollPos > prevScrollpos) {
         jQuery('.header-bar').removeClass('active');
+        jQuery('.info-switch span').removeClass('active');
     }else{
         /*jQuery('.header-bar').removeClass('active');*/
     }
