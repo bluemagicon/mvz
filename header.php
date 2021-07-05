@@ -107,13 +107,13 @@ $page_header	= $override_header ?: $global_header;
                         </svg>
                         Notfall
                     </a>
-                    <a href="#" class="btn-plain-icon">
+                    <a data-custom-open="dyn-modal" data-content="<p>Aufgrund der derzeitigen Pandemiesituation (SARS-CoV-2) kommt es zu einer Überbelastung unserer Telefonanlage. Da wir uns für jeden Anruf die erforderliche Zeit nehmen, bitten wir Sie um Verständnis, wenn es zu Wartezeiten am Telefon kommt. Ihre Rezept- und Überweisungswünsche können Sie jeder Zeit auf unserem Rezepttelefon oder per E-Mail bestellen.</p><p>Die bestellten Rezepte, Überweisungen etc. holen Sie bitte erst <strong>nach 11:00 Uhr des Folgetages</strong> und unter Vorlage Ihrer Krankenversichertenkarte bei uns ab. Diese Uhrzeit dient zu Ihrem Schutz. So kann das Aufeinandertreffen mit evtl. potenziell infektiösen Patienten gemindert werden.</p>" data-title="<p><strong>Rezeptbestellung</strong><br/>Anrufe und Rezeptbestellungen</p>" class="btn-plain-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
                             <path id="FontAwsome_file-alt_" data-name="FontAwsome (file-alt)" d="M11.25,9.688v1.094a.47.47,0,0,1-.469.469H4.219a.47.47,0,0,1-.469-.469V9.688a.47.47,0,0,1,.469-.469h6.562A.47.47,0,0,1,11.25,9.688ZM10.781,12.5H4.219a.47.47,0,0,0-.469.469v1.094a.47.47,0,0,0,.469.469h6.562a.47.47,0,0,0,.469-.469V12.969A.47.47,0,0,0,10.781,12.5ZM15,5.152V18.125A1.875,1.875,0,0,1,13.125,20H1.875A1.875,1.875,0,0,1,0,18.125V1.875A1.875,1.875,0,0,1,1.875,0H9.848a1.875,1.875,0,0,1,1.324.551l3.277,3.277A1.868,1.868,0,0,1,15,5.152ZM10,2.027V5h2.973L10,2.027Zm3.125,16.1V6.875H9.062a.935.935,0,0,1-.937-.938V1.875H1.875v16.25Z" fill="#ce0d28"/>
                         </svg>
                         Rezept
                     </a>
-                    <a href="#" class="btn-calendar">
+                    <a href="https://www.doctolib.de/medizinisches-versorgungszentrum-mvz/bremen/mvz-bremen-mitte?pid=practice-185850&amp;utm_campaign=website-button&amp;utm_source=mvz-bremen-mitte-website-button&amp;utm_medium=referral&amp;utm_content=option-3&amp;utm_term=mvz-bremen-mitte" target="_blank" class="btn-calendar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15.75" height="18" viewBox="0 0 15.75 18">
                             <path id="FontAwsome_calendar-alt_" data-name="FontAwsome (calendar-alt)" d="M0,16.313A1.688,1.688,0,0,0,1.688,18H14.062a1.688,1.688,0,0,0,1.688-1.687V6.75H0ZM11.25,9.422A.423.423,0,0,1,11.672,9h1.406a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H11.672a.423.423,0,0,1-.422-.422Zm0,4.5a.423.423,0,0,1,.422-.422h1.406a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H11.672a.423.423,0,0,1-.422-.422Zm-4.5-4.5A.423.423,0,0,1,7.172,9H8.578A.423.423,0,0,1,9,9.422v1.406a.423.423,0,0,1-.422.422H7.172a.423.423,0,0,1-.422-.422Zm0,4.5a.423.423,0,0,1,.422-.422H8.578A.423.423,0,0,1,9,13.922v1.406a.423.423,0,0,1-.422.422H7.172a.423.423,0,0,1-.422-.422Zm-4.5-4.5A.423.423,0,0,1,2.672,9H4.078a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H2.672a.423.423,0,0,1-.422-.422Zm0,4.5a.423.423,0,0,1,.422-.422H4.078a.423.423,0,0,1,.422.422v1.406a.423.423,0,0,1-.422.422H2.672a.423.423,0,0,1-.422-.422ZM14.062,2.25H12.375V.563A.564.564,0,0,0,11.812,0H10.687a.564.564,0,0,0-.562.563V2.25h-4.5V.563A.564.564,0,0,0,5.062,0H3.938a.564.564,0,0,0-.562.563V2.25H1.688A1.688,1.688,0,0,0,0,3.938V5.625H15.75V3.938A1.688,1.688,0,0,0,14.062,2.25Z" fill="#fff"/>
                         </svg>
@@ -128,7 +128,7 @@ $page_header	= $override_header ?: $global_header;
         <div class="allgemeine-infos active">
             <?php while(have_rows('allgemeine_informationen', 'option')) : the_row(); ?>
                 <?php if(get_sub_field('anzeige') == "PopUp"){ ?>
-                    <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('popup_content'); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
+                    <a data-custom-open="dyn-modal" data-content="<?= urlencode(get_sub_field('popup_content')); ?>" data-title="<?= get_sub_field('header_content'); ?>" class="header-bar-item open-popup">
                         <?php echo get_sub_field('header_content'); ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                             <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>

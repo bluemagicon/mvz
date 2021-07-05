@@ -84,6 +84,10 @@ jQuery(document).ready(function () {
     jQuery('.oeffnungszeiten-table tr:nth-child('+today+')').css('background', '#143A89');
     jQuery('.oeffnungszeiten-table tr:nth-child('+today+')').css('color', '#fff');
 
+    var today = jQuery('.bereich').eq(0).find('.oeffnungszeiten-table tr:nth-child('+today+') td:last-child').text();
+
+    jQuery('.open-custom-popup em').text(today);
+
     // -----------------------------------------------
     // -----------------------------------------------
     // MODAL / LIGHTBOX
