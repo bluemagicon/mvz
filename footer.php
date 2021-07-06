@@ -39,7 +39,7 @@ $page_support	= $override_support ?: $global_support;
                 Außer der Schleifmühle 64/66 <br />
                 28203 Bremen
             </p>
-            <a href="#" class="button-plain">
+            <a href="<?php echo get_permalink(220); ?>" class="button-plain">
                 <svg xmlns="http://www.w3.org/2000/svg" width="8.496" height="14" viewBox="0 0 8.496 14">
                     <path id="FontAwsome_chevron-right_" data-name="FontAwsome (chevron-right)" d="M35.765,45.2l-6.231,6.231a.769.769,0,0,1-1.088,0l-.727-.727a.769.769,0,0,1,0-1.087l4.938-4.961L27.719,39.7a.769.769,0,0,1,0-1.087l.727-.727a.769.769,0,0,1,1.088,0l6.231,6.231A.769.769,0,0,1,35.765,45.2Z" transform="translate(-27.494 -37.657)" fill="#143a89"/>
                 </svg>
@@ -51,7 +51,7 @@ $page_support	= $override_support ?: $global_support;
                         <strong>Innere Medizin</strong> <br />
                         0421 - 323323 <br />
                     </p>
-                    <a href="#" class="button-plain">
+                    <a href="tel:+49421323323" class="button-plain">
                         <svg xmlns="http://www.w3.org/2000/svg" width="8.496" height="14" viewBox="0 0 8.496 14">
                             <path id="FontAwsome_chevron-right_" data-name="FontAwsome (chevron-right)" d="M35.765,45.2l-6.231,6.231a.769.769,0,0,1-1.088,0l-.727-.727a.769.769,0,0,1,0-1.087l4.938-4.961L27.719,39.7a.769.769,0,0,1,0-1.087l.727-.727a.769.769,0,0,1,1.088,0l6.231,6.231A.769.769,0,0,1,35.765,45.2Z" transform="translate(-27.494 -37.657)" fill="#143a89"/>
                         </svg>
@@ -63,7 +63,7 @@ $page_support	= $override_support ?: $global_support;
                         <strong>Gynäkoligie</strong> <br />
                         0421 - 704446<br/>
                     </p>
-                    <a href="#" class="button-plain">
+                    <a href="tel:+49421704446" class="button-plain">
                         <svg xmlns="http://www.w3.org/2000/svg" width="8.496" height="14" viewBox="0 0 8.496 14">
                             <path id="FontAwsome_chevron-right_" data-name="FontAwsome (chevron-right)" d="M35.765,45.2l-6.231,6.231a.769.769,0,0,1-1.088,0l-.727-.727a.769.769,0,0,1,0-1.087l4.938-4.961L27.719,39.7a.769.769,0,0,1,0-1.087l.727-.727a.769.769,0,0,1,1.088,0l6.231,6.231A.769.769,0,0,1,35.765,45.2Z" transform="translate(-27.494 -37.657)" fill="#143a89"/>
                         </svg>
