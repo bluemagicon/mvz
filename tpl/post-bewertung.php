@@ -69,7 +69,7 @@ if($stars) {
                 ?>
             <?php } ?>
 
-            <p><a data-custom-open="dyn-modal" data-content="<?= urlencode($data['text']) ?>" data-title="<?= get_the_title() ?>" data-subtitle="<?= $data['subheadline'] ?>">weiterlesen</a></p>
+            <p><a data-custom-open="dyn-modal" data-content="<?= urlencode($data['text']) ?>">weiterlesen</a></p>
         </div>
 
     </div>
