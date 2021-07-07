@@ -86,7 +86,7 @@ function baw_register_my_cpts() {
 		"query_var" => true,
 		"menu_position" => 24,
 		"menu_icon" => "dashicons-star-filled",
-		"supports" => [ "title", "excerpt", "thumbnail" ],
+		"supports" => [ "title", "thumbnail" ],
 		"show_in_graphql" => false,
 	];
 
