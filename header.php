@@ -102,7 +102,7 @@ $page_header	= $override_header ?: $global_header;
                         </span>
                     </div>
                     <?php if(have_rows('notfall', 'option')) : the_row(); ?>
-                        <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('inhalt'); ?>" data-title="<?= get_sub_field('titel'); ?>" class="btn-plain-icon">
+                        <a data-custom-open="dyn-modal" data-content="<?= urlencode(get_sub_field('inhalt')); ?>" data-title="<?= get_sub_field('titel'); ?>" class="btn-plain-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18.75" height="20" viewBox="0 0 18.75 20">
                                 <path id="FontAwsome_star-of-life_" data-name="FontAwsome (star-of-life)" d="M18.439,13.064,13.13,10l5.31-3.064a.625.625,0,0,0,.229-.854L17.417,3.917a.626.626,0,0,0-.854-.229l-5.31,3.064V.625A.625.625,0,0,0,10.628,0h-2.5A.625.625,0,0,0,7.5.625V6.752L2.191,3.689a.626.626,0,0,0-.854.229L.086,6.082a.625.625,0,0,0,.229.854L5.625,10,.315,13.064a.625.625,0,0,0-.229.854l1.251,2.165a.626.626,0,0,0,.854.229L7.5,13.248v6.127A.625.625,0,0,0,8.126,20h2.5a.625.625,0,0,0,.625-.625V13.248l5.31,3.064a.625.625,0,0,0,.854-.229l1.251-2.165a.624.624,0,0,0-.229-.854Z" transform="translate(-0.002)" fill="#ce0d28"/>
                             </svg>
@@ -110,7 +110,7 @@ $page_header	= $override_header ?: $global_header;
                         </a>
                     <?php endif; ?>
                     <?php if(have_rows('rezept', 'option')) : the_row(); ?>
-                        <a data-custom-open="dyn-modal" data-content="<?= get_sub_field('inhalt'); ?>" data-title="<?= get_sub_field('titel'); ?>" class="btn-plain-icon">
+                        <a data-custom-open="dyn-modal" data-content="<?= urlencode(get_sub_field('inhalt')); ?>" data-title="<?= get_sub_field('titel'); ?>" class="btn-plain-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20">
                                 <path id="FontAwsome_file-alt_" data-name="FontAwsome (file-alt)" d="M11.25,9.688v1.094a.47.47,0,0,1-.469.469H4.219a.47.47,0,0,1-.469-.469V9.688a.47.47,0,0,1,.469-.469h6.562A.47.47,0,0,1,11.25,9.688ZM10.781,12.5H4.219a.47.47,0,0,0-.469.469v1.094a.47.47,0,0,0,.469.469h6.562a.47.47,0,0,0,.469-.469V12.969A.47.47,0,0,0,10.781,12.5ZM15,5.152V18.125A1.875,1.875,0,0,1,13.125,20H1.875A1.875,1.875,0,0,1,0,18.125V1.875A1.875,1.875,0,0,1,1.875,0H9.848a1.875,1.875,0,0,1,1.324.551l3.277,3.277A1.868,1.868,0,0,1,15,5.152ZM10,2.027V5h2.973L10,2.027Zm3.125,16.1V6.875H9.062a.935.935,0,0,1-.937-.938V1.875H1.875v16.25Z" fill="#ce0d28"/>
                             </svg>

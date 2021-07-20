@@ -7,6 +7,26 @@
   --baw-button-border-radius: 3px;
   --box-shadow-mvz: 0px 4px 20px rgba(20, 58, 137, 0.08);
 }
+.swiper-wrapper{
+  display: flex;
+  article{
+    height: 100%;
+  }
+}
+.nav-list{
+  li.menu-item-has-children:hover{
+    .sub-menu{
+      display: flex;
+    }
+  }
+  .sub-menu{
+    display: none;
+    flex-direction: column;
+    li{
+      margin-right: 0;
+    }
+  }
+}
 
 
   /*** HEADLINES ***/
