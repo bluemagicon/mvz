@@ -217,7 +217,7 @@
     font-size: 0.8em;
   }
   margin: 0;
-  line-height: 1;
+  line-height: 0.8;
 }
 .custom-popup{
   height: 100vh;
@@ -384,12 +384,18 @@
   font-weight: 600;
   display: inline-flex;
   align-items: center;
+  &.single{
+    color: $w-color-primary;
+    svg{
+      width: 12px;
+    }
+  }
   svg{
     width: 8px;
     margin-right: 10px;
     flex-shrink: 0;
     path{
-      transition: .3s;
+      transition: .1s;
     }
   }
   &:hover{
@@ -464,6 +470,79 @@
     background: $w-color-medium !important;
   }
 }
+
+/*** CONTACT-FORM ***/
+.contact-form-wrapper{
+  background: $w-color-light;
+  padding: 3.5rem;
+  border-radius: 15px;
+  div{
+    position: relative;
+    &.input-wrapper{
+      margin-bottom: 35px;
+      height: 65px;
+      &:first-child{
+        padding-right: 15px;
+      }
+    }
+  }
+  input[type="text"],
+  input[type="date"]{
+    height: 43px;
+  }
+  .wpcf7-list-item {
+    margin-top: 10px;
+    &.first{
+      margin-left: 0;
+    }
+    span {
+      font-size: 0.9em;
+    }
+  }
+  label{
+    font-weight: normal;
+    font-size: 0.95em;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .ajax-loader{
+    display: none !important;
+  }
+  input[type="submit"]{
+    display: inline-block;
+    width: inherit;
+    border-radius: 4px;
+    background: $w-color-primary;
+    transition: all .3s;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Asap Condensed';
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 15px;
+    &:hover {
+      background: darken($w-color-primary, 10%);
+    }
+  }
+  .wpcf7-not-valid-tip{
+    display: none !important;
+  }
+  .wpcf7-not-valid{
+    background: #ffcbcb;
+  }
+}
+
+/*** WP-BLOCK-TABLE ***/
+.wp-block-table{
+  table{
+    min-width: 900px;
+  }
+}
+.wp-block-table.is-style-stripes td{
+  padding: 10px;
+}
+
 @media(max-width: 1200px){
   #header{
     .header-inner{

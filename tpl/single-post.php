@@ -20,6 +20,10 @@
 				<div class="uk-grid uk-flex-middle">
                     <div class="uk-width-1-2@m">
                         <div class="single-header-inner">
+                            <a class="button-plain single" href="<?= get_permalink(222); ?>">
+                                <?= baw_svg('solid/arrow-left') ?>
+                                Zur News Übersicht
+                            </a>
                             <h1 class="single-title">
                                 <?= get_the_title(); ?>
                             </h1>
@@ -41,7 +45,7 @@
                     </div>
 					<?php if ( has_post_thumbnail() ) { ?>
 						<div class="uk-width-1-2@m post-image">
-							<?php the_post_thumbnail('thumbnail'); ?>
+							<?php the_post_thumbnail('baw-m'); ?>
 						</div>
 					<?php } ?>
 				</div>
