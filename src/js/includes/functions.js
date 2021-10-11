@@ -92,7 +92,7 @@ jQuery(document).ready(function () {
     if(today_int <= 5 && today_int != 0) {
         jQuery('.open-custom-popup em').text(today);
     } else{
-        jQuery('.open-custom-popup em').text('geschlossen');
+        jQuery('.open-custom-popup em').text('Geschlossen');
     }
 
     // -----------------------------------------------
