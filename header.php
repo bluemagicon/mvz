@@ -140,11 +140,14 @@ $page_header	= $override_header ?: $global_header;
                     </a>
                 <?php }elseif(get_sub_field('anzeige') == "Custom PopUp"){ ?>
                     <span class="header-bar-item open-custom-popup">
-                            <?php echo get_sub_field('header_content'); ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                                <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
-                            </svg>
-                        </span>
+                        <p>
+                            <strong>Allgemeine Sprechzeit</strong><br />
+                            Heute von <em></em>
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path id="FontAwsome_plus_" data-name="FontAwsome (plus)" d="M14.857,38.286H9.714V33.143A1.143,1.143,0,0,0,8.571,32H7.429a1.143,1.143,0,0,0-1.143,1.143v5.143H1.143A1.143,1.143,0,0,0,0,39.429v1.143a1.143,1.143,0,0,0,1.143,1.143H6.286v5.143A1.143,1.143,0,0,0,7.429,48H8.571a1.143,1.143,0,0,0,1.143-1.143V41.714h5.143A1.143,1.143,0,0,0,16,40.571V39.429A1.143,1.143,0,0,0,14.857,38.286Z" transform="translate(0 -32)" fill="#143a89"/>
+                        </svg>
+                    </span>
                 <?php }elseif(get_sub_field('anzeige') == "Seite"){ ?>
                     <a href="<?php echo get_sub_field('link'); ?>" class="header-bar-item">
                         <?php echo get_sub_field('header_content'); ?>
