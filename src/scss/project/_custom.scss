@@ -541,8 +541,7 @@
 .wp-block-table.is-style-stripes td{
   padding: 10px;
 }
-
-@media(max-width: 1200px){
+@media(max-width: $w-breakpoint-xlarge){
   #header{
     .header-inner{
       .header-container{
@@ -565,6 +564,8 @@
       }
     }
   }
+}
+@media(max-width: $w-breakpoint-large){
   .footer {
     .footer-inner {
       .footer-col {
@@ -577,7 +578,7 @@
     }
   }
 }
-@media(max-width: 992px){
+@media(max-width: $w-breakpoint-medium){
   #header{
     .header-inner{
       .header-container{
@@ -640,7 +641,7 @@
     }
   }
 }
-@media(max-width: 576px){
+@media(max-width: $w-breakpoint-small){
   #header{
     .header-inner{
       padding: 15px 0;
