@@ -1,5 +1,9 @@
 
 /*** GLOBAL ***/
+
+.nav-list li.menu-item-has-children:hover .sub-menu{
+  z-index: 2;
+}
 .w-body{
   font-family: 'Asap';
 }
