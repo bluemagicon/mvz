@@ -60,7 +60,7 @@ $page_support	= $override_support ?: $global_support;
                 </div>
                 <div class="col">
                     <p>
-                        <strong>Gynäkoligie</strong> <br />
+                        <strong>Gynäkologe</strong> <br />
                         0421 - 704446<br/>
                     </p>
                     <a href="tel:+49421704446" class="button-plain">
