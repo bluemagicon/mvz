@@ -30,9 +30,10 @@ function myFunction() {
 // https://github.com/appleple/hiraku2
 
 var offcanvas = new Hiraku(".offcanvas", {
-    btn: "#offcanvas-trigger",
+    btn: ".offcanvas-trigger",
+    //closeBtn: '.offcanvas-trigger-close',
     fixedHeader: "#header",
-    width: '50%',
+    width: '75%',
     direction: "right"
 });
 offcanvas.on('open', function(){

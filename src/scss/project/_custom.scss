@@ -1,6 +1,25 @@
 
 /*** GLOBAL ***/
-
+/*
+.offcanvas-trigger-close{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+.button-container{
+  display: flex;
+  justify-content: flex-end;
+}
+*/
+.offcanvas{
+  padding: 20px;
+}
 .nav-list li.menu-item-has-children:hover .sub-menu{
   z-index: 2;
 }

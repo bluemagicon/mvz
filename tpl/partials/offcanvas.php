@@ -1,4 +1,9 @@
 <nav role="navigation" class="offcanvas" aria-hidden="false">
+    <!--
+    <div class="button-container">
+        <button class="offcanvas-trigger-close" type="button">X</button>
+    </div>
+    -->
     <div class="offcanvas-item offcanvas-item--primary">
         <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => '', 'container' => '')); ?>
     </div>
