@@ -81,12 +81,17 @@ jQuery(document).ready(function () {
     });
 
     var today = new Date().getDay();
+
     jQuery('.oeffnungszeiten-table tr:nth-child('+today+')').css('background', '#143A89');
     jQuery('.oeffnungszeiten-table tr:nth-child('+today+')').css('color', '#fff');
 
-    var today = jQuery('.bereich').eq(0).find('.oeffnungszeiten-table tr:nth-child('+today+') td:last-child').text();
+    var today_int = today;
 
-    jQuery('.open-custom-popup em').text(today);
+    var today = jQuery('.bereich').eq(0).find('.oeffnungszeiten-table tr:nth-child('+today+') td:last-child').text();
+    
+    if(today_int <= 5 && today_int != 0) {
+        jQuery('.open-custom-popup em').text(today);
+    }
 
     // -----------------------------------------------
     // -----------------------------------------------
