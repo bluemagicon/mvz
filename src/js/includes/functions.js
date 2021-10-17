@@ -88,10 +88,8 @@ jQuery(document).ready(function () {
     var today_int = today;
 
     var today = jQuery('.bereich').eq(0).find('.oeffnungszeiten-table tr:nth-child('+today+') td:last-child').text();
-    
-    if(today_int <= 5 && today_int != 0) {
-        jQuery('.open-custom-popup em').text(today);
-    }
+
+    jQuery('.open-custom-popup em').text(today);
 
     // -----------------------------------------------
     // -----------------------------------------------
