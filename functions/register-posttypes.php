@@ -189,7 +189,7 @@ function baw_register_my_cpts() {
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -199,9 +199,9 @@ function baw_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "stellenanzeige", "with_front" => true ],
 		"query_var" => true,
-		"menu_position" => 20,
-		"menu_icon" => "dashicons-groups",
-		"supports" => [ "title", "editor"],
+		"menu_position" => 21,
+		"menu_icon" => "dashicons-group",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "revisions" ],
 		"show_in_graphql" => false,
 	];
 
