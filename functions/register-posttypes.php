@@ -169,6 +169,43 @@ function baw_register_my_cpts() {
 	];
 
 	register_post_type( "leistung", $args );
+
+	/**
+	 * Post Type: Stellenanzeigen.
+	 */
+
+	$labels = [
+		"name" => __( "Stellenanzeigen", "baw" ),
+		"singular_name" => __( "Stellenanzeige", "baw" ),
+	];
+
+	$args = [
+		"label" => __( "Stellenanzeigen", "baw" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "stellenanzeige", "with_front" => true ],
+		"query_var" => true,
+		"menu_position" => 20,
+		"menu_icon" => "dashicons-groups",
+		"supports" => [ "title", "editor"],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "stellenanzeige", $args );
 }
 
 add_action( 'init', 'baw_register_my_cpts' );
