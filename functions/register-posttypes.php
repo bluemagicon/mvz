@@ -200,7 +200,7 @@ function baw_register_my_cpts() {
 		"rewrite" => [ "slug" => "stellenanzeige", "with_front" => true ],
 		"query_var" => true,
 		"menu_position" => 21,
-		"menu_icon" => "dashicons-group",
+		"menu_icon" => "dashicons-groups",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "revisions" ],
 		"show_in_graphql" => false,
 	];
