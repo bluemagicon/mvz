@@ -564,6 +564,14 @@
 .wp-block-table.is-style-stripes td{
   padding: 10px;
 }
+
+/*** GROUP Custom Styles ***/
+.is-style-no-margin{
+  .wp-block-group__inner-container{
+    margin: 0 !important;
+  }
+}
+
 @media(max-width: $w-breakpoint-xlarge){
   #header{
     .header-inner{

@@ -58,6 +58,11 @@ wp.blocks.registerBlockStyle( 'core/cover', {
 	label: 'mind. 50% Höhe'
 } );
 
+wp.blocks.registerBlockStyle( 'core/group', {
+	name: 'no-margin',
+	label: 'Ohne Abstände'
+} );
+
 
 // ----------------------------------------------------
 // ----------------------------------------------------
